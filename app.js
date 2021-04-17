@@ -4,6 +4,7 @@ const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
+const Delete = document.getElementById("jsDelete");
 
 
 const INITIAL_COLOR = "#2c2c2c";
@@ -91,6 +92,12 @@ function handleSaveClick(){
 }
 
 
+function deleteClick(){
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+}
+
+
 if (canvas) {
     canvas.addEventListener("mousemove", onMouseMove);
     canvas.addEventListener("mousedown", startPainting);
@@ -114,4 +121,8 @@ if(mode){
 
 if (saveBtn) {
     saveBtn.addEventListener("click", handleSaveClick);
+}
+
+if (Delete) {
+    Delete.addEventListener("click", deleteClick );
 }
